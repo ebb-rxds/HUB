@@ -1,5 +1,5 @@
 # HUB
-HUB/spoke manager for dynamic ports in q for mac and linux
+HUB/spoke manager for dynamic ports in q on mac and linux
 
 The magic. Setting a port to infinity sets it to a non blocked free port.
 To take advantage of this we will have a registrar called HUB.
