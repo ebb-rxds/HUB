@@ -79,7 +79,7 @@ If Hub goes down it re establishes handles with spoke(s) based on the spoke disk
 
 If a spoke goes down it is removed from the spoke table and registered with the down table.
 
-/ eample down entry
+/ example down entry
 
 key|value
 ------|------------------------------
