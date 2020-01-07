@@ -117,3 +117,5 @@ All spoke(s) make connections with named services by using HOP instead of hopen.
 HOP which consults with HUB can take sym or string.
 
 ```q)h:HOP`dev```
+
+use explicit -p option to bypass HUB. -p 0 for local instance
