@@ -19,13 +19,16 @@ down:delete from update crash:.z.P from lj[spoke;memst];
 / re establish handles and clean up spoke
 if[count spoke;update P:.z.P,handle:@[hopen;;0Ni]each"j"$port from`spoke;delete from`spoke where null handle];
 
-/ append to down table when spoke dissapears and reStart. if reStart is not wanted delete from spoke before killing screen
+/ append to down table when spoke dissapears and reStart. if reStart is not wanted use killHndl[handle]
 .z.pc:{`down upsert update crash:.z.P from lj[d:select from spoke where handle=x;memst];delete from`spoke where handle=x;if[count d;reStart last down]}
  
  / update up time and mem stats every 10 seconds
 .z.ts:{update up:"n"$.z.P-P from`spoke;`memst set{x[`handle]@".Q.w[]"}each spoke}
 \t 10000
 
+downTime:{update dtime:Ps-Pd from select from aj[`dir`P;select`$dir,P,Ps:P from spoke;select`$dir,P:crash,Pd:crash from down]where not null Pd}
+killHndl:{delete from`spoke where handle in x;neg[x]@\:"\\\\";}
+killAll:{killHndl key .z.W}
 \
 {reStart enlist[`X]!enlist x}each "/Users/ebb/q/m64/q ",/:system"find /Users/ebb/rxds/imdb/* -depth 0";
 select from down where crash>exec max P from spoke
