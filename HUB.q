@@ -26,9 +26,10 @@ if[count spoke;update P:.z.P,handle:@[hopen;;0Ni]each"j"$port from`spoke;delete 
 .z.ts:{update up:"n"$.z.P-P from`spoke;`memst set{x[`handle]@".Q.w[]"}each spoke}
 \t 10000
 
+bounceHndl:{neg[x]@\:"\\\\"}
 downTime:{update dtime:Ps-Pd from select from aj[`dir`P;select`$dir,P,Ps:P from spoke;select`$dir,P:crash,Pd:crash from down]where not null Pd}
-killHndl:{delete from`spoke where handle in x;neg[x]@\:"\\\\";}
-killAll:{killHndl key .z.W}
+killHndl:{delete from`spoke where handle in x;bounceHndl x}
+killAll:{killHndl key .z.W;}
 \
 {reStart enlist[`X]!enlist x}each "/Users/ebb/q/m64/q ",/:system"find /Users/ebb/rxds/imdb/* -depth 0";
 select from down where crash>exec max P from spoke
