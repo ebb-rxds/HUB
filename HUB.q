@@ -30,6 +30,8 @@ bounceHndl:{neg[x]@\:"\\\\"}
 downTime:{update dtime:Ps-Pd from select from aj[`dir`P;select`$dir,P,Ps:P from spoke;select`$dir,P:crash,Pd:crash from down]where not null Pd}
 killHndl:{delete from`spoke where handle in x;bounceHndl x;delete from`down where handle in x;}
 killAll:{killHndl key .z.W;}
+
+.z.exit:{system"screen -dmS HUB rlwrap -r $QHOME/m64/q HUB.q"}
 \
 {reStart enlist[`X]!enlist x}each "/Users/ebb/q/m64/q ",/:system"find /Users/ebb/rxds/imdb/* -depth 0";
 select from down where crash>exec max P from spoke
