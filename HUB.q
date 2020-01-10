@@ -26,10 +26,11 @@ if[count spoke;update P:.z.P,handle:@[hopen;;0Ni]each"j"$port from`spoke;delete 
 .z.ts:{update up:"n"$.z.P-P from`spoke;`memst set{x[`handle]@".Q.w[]"}each spoke}
 \t 10000
 
-bounceHndl:{neg[x]@\:"\\\\"}
-downTime:{update dntm:Ps-Pd from select from aj[`dir`P;select`$dir,P,Ps:P from spoke;select`$dir,P:crash,Pd:crash from down]where not null Pd}
-killHndl:{delete from`spoke where handle in x;bounceHndl x;delete from`down where handle in x;}
+killHndl:{delete from`spoke where handle in x;neg[x]@\:"\\\\";delete from`down where handle in x;}
 killAll:{killHndl key .z.W;}
+bounceHndl:{d:update crash:.z.P from lj[select from spoke where handle in x;memst];killHndl x;reStart each d;`down upsert d;}
+bounceAll:{bounceHndl key .z.W}
+downTime:{update dntm:Ps-Pd from select dir,Pd,Ps from aj[`dir`P;select`$dir,P,Ps:P from spoke;select`$dir,P:crash,Pd:crash from down]where not null Pd}
 
 .z.exit:{system"screen -dmS HUB rlwrap -r $QHOME/m64/q HUB.q"}
 \
