@@ -15,7 +15,7 @@ upDate:{
  if[first r;`error upsert update stack:enlist last r from select from spoke where handle=hdl];}
 
 / init tables
-spoke:{update`$"."sv'string"i"$0x0 vs'IP," "sv'X,EXP:("D"$.z.l 1)-.z.D,handle:0i,up:.z.N,dir:system"\\pwd",STY:system"echo $STY",err:0 from`port`slaves`pid`IP xcol enlist(`p`s,`$'x)!(system@'"ps"),get each".z.",/:x}"iahuXPKk"
+spoke:{update`$"."sv'string"i"$0x0 vs'IP," "sv'X,EXP:("D"$.z.l 1)-.z.D,handle:0i,up:"n"$P-P,dir:system"\\pwd",STY:system"echo $STY",err:0 from`port`slaves`pid`IP xcol enlist(`p`s,`$'x)!(system@'"ps"),get each".z.",/:x}"iahuXPKk"
 memst:`pid xkey update pid:.z.i from enlist .Q.w[];
 down:delete from update crash:.z.P from lj[spoke;memst];
 
