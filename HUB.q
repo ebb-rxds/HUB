@@ -1,4 +1,5 @@
 / start from the HUB dir. screen -dmS HUB rlwrap -r $QHOME/m64/q HUB.q 
+/\e 2
 \p 0W
 \c 25 250
 
@@ -18,6 +19,7 @@ upDate:{
 spoke:{update`$"."sv'string"i"$0x0 vs'IP," "sv'X,EXP:("D"$.z.l 1)-.z.D,handle:0i,up:"n"$P-P,dir:system"\\pwd",STY:system"echo $STY",err:0 from`port`slaves`pid`IP xcol enlist(`p`s,`$'x)!(system@'"ps"),get each".z.",/:x}"iahuXPKk"
 memst:`pid xkey update pid:.z.i from enlist .Q.w[];
 down:delete from update crash:.z.P from lj[spoke;memst];
+error:update err:0N,stack:enlist"" from select from spoke where 0b;
 
 / apply disk image 
 {if[x in key`:.;x upsert get hsym x]}each`spoke`memst`down`error;
