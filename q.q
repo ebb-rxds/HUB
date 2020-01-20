@@ -1,2 +1,2 @@
-/ use explicit -p option to bypass HUB. -p 0 for local instance
-if[(not "-p"in .z.X)&1<count .z.X;system"l ",getenv[`HOME],"/HUB/spoke.q"];
+/ if option is second element then load spoke.q
+if[.z.X[1]like"-*";system"l ",getenv[`HOME],"/HUB/spoke.q"];
