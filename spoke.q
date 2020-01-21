@@ -8,4 +8,4 @@ HUB@(upsert;$["-dbdir"in .z.X;`spoke;`client];{update`$"."sv'string"i"$0x0 vs'IP
 / (r)equest (h)andle (f)unction (v)ariable
 HOP:{[v;s]v set @[hopen;last HUB@(`HOP;v;s);0];if[0=h:get v;:string[s]," not found"];`HDL upsert 1!enlist`r`h`f`v`p!(s;h;get[.z.s]4;v;system"p")}
 
-if["-dbdir"in .z.X;{h:neg hopen"j"$x`p;h@(eval;enlist each x`f`v`r)}each select from raze[0!'HUB["hsym`$\"::\",/:string client`port"]@\:`HDL]where r=`$last"."vs first system"echo $STY"]
+if[("-dbdir"in .z.X)&HUB"count client";{h:neg hopen"j"$x`p;h@(eval;enlist each x`f`v`r)}each select from raze[0!'HUB["hsym`$\"::\",/:string client`port"]@\:`HDL]where r=`$last"."vs first system"echo $STY"]
