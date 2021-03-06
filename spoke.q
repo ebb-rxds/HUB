@@ -1,4 +1,4 @@
-\if[not"-p"in .z.X;system"p 0W"]
+if[not"-p"in .z.X;system"p 0W"]
 
 if[(`$"HUB down!")~HUB:@[system;"ps -eo pid,command|grep HUB.q|egrep -v 'rlwrap|grep'";`$"HUB down!"];0N!HUB;exit -1]
 HUB:hopen"J"$first" "vs last":"vs first system"lsof -iTCP -sTCP:LISTEN -Pn|grep ",first" "vs ltrim first HUB
