@@ -48,7 +48,7 @@ killHndl:{delete from`spoke where handle in x;bounceHndl x;delete from`down wher
 killAll:{killHndl exec handle from spoke where handle<>0i;}
 downTime:{update dntm:Ps-Pd from select dir,Pd,Ps from aj[`dir`P;select dir,P,Ps:P from spoke;select dir,P:crash,Pd:crash from down]where not null Pd}
 
-.z.exit:{system"screen -dmS HUB rlwrap -r $QHOME/m64/q HUB.q"}
+.z.exit:{system"screen -dmS HUB rlwrap -r $QHOME/$QARCH/q HUB.q"}
 
 /L:{enlist[`X]!enlist" "sv("/Users/ebb/q/m64/q";"-s";string rand .z.c;"-dbdir";x)}each system"find /Users/ebb/rxds/imdb/* -depth 0"
 /`:t/ set .Q.en[`:.]flip(`$'10#.Q.a)!(10#10)?\:`8
