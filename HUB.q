@@ -1,4 +1,4 @@
-/ start from the HUB dir. screen -dmS HUB rlwrap -r $QHOME/m64/q HUB.q 
+/ start from the HUB dir. screen -dmS HUB rlwrap -r $QHOME/$QARCH/q HUB.q 
 
 \c 25 250
 
